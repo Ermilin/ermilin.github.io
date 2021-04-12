@@ -1,6 +1,6 @@
 ---
-title: 'React-Marquee'
-description: 'An infinite carousel built with React and GSAP'
+title: 'React Marquee'
+description: 'An infinite carousel built using React and GSAP'
 image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo-man.svg'
 ---
 
@@ -8,26 +8,26 @@ image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo-man.svg'
 
 ### React
 
-**useRef()** lets us access our elements as a variable
+**useRef()** is used to save DOM elements in a variable.  
 **useEffect()** is used to:
 
 1. create new elements
 1. position the elements
 1. animate
 
-**createRef()** creates references to our newly created elements.  
-**useState()** stores our strings and our widest element width.
+**createRef()** creates references to the newly created elements.  
+**useState()** stores strings and the widest element width.
 
 ### GSAP
 
-**set()** is how we set the position of our elements.  
+**set()** sets the position of the elements.  
 **to()** animates the elements.
 
 ## Code Structure
 
 ### Cloning
 
-1.  Array of strings coming in as props to our component
+1.  Array of strings coming in as props to the marquee component
 2.  Store each element as a ref
 
 ```javascript
@@ -35,8 +35,8 @@ let els = useRef(items.map(() => createRef()));
 ```
 
 3.  Measure container and props width
-4.  Keep cloning elements if the container width is greater than the total width of our elements
-5.  Find the widest element so we can offset the container with its width
+4.  Keep cloning elements if the container width is greater than the total width of the elements
+5.  Find the widest element to offset the container with
     <!-- // if (maxWidth < width) {
     // maxWidth = width;
     // } -->
@@ -63,7 +63,7 @@ useEffect(() => {
 
 ### Steps
 
-The elements are placed on the X axis using gsap.set and the total width of our placed elements which accumulates throughout our iteration.
+The elements are placed on the X-axis using gsap.set and the total width of the placed elements which accumulates throughout the iteration.
 
 ```javascript
 let accWidth = 0;
@@ -79,7 +79,7 @@ els.forEach((item) => {
 ### Animation
 
 1. Each item animates from its initial position to the total width of every element combined
-1. When the element has reached the end, it has to place itself at the end of the row, we do this with a modulus of the total width using gsap.utils.wrap()
+1. When the element has reached the end, it has to place itself at the end of the row, this is done with a modulus of the total width using gsap.utils.wrap()
 1. **delta** is either **1** or **-1** depending on the direction of the animation
 
 ```javascript

@@ -3,14 +3,11 @@
 .container {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto;
   gap: $spacing;
   margin-top: $spacing;
 
   > * {
     padding: 0 $spacing;
   }
-}
-
-@media (min-width: 600px) {
 }

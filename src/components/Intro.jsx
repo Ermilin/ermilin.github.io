@@ -18,7 +18,7 @@ const Intro = () => (
       </div>
       <div>
         <h4>Extra</h4>
-        <p>Cooking, Botany, Productivity</p>
+        <p>Cooking, Fitness, Productivity</p>
       </div>
     </aside>
   </section>
