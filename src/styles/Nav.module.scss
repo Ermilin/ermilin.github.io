@@ -1,0 +1,16 @@
+.nav {
+  display: grid;
+  place-items: center start;
+  border-bottom: 1px solid #eaeaea;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      a {
+        padding: 0;
+      }
+    }
+  }
+}

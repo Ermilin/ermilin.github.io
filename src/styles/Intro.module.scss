@@ -1,0 +1,30 @@
+@import 'variables';
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: $spacing;
+
+  figure {
+    grid-column: 1/4;
+    // box-shadow: $shadow;
+    border-radius: $border-radius;
+    overflow: hidden;
+    border: $border;
+  }
+  aside {
+    grid-column: 4/6;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: calc(#{$spacing} / 2);
+
+    p {
+      margin: 0;
+    }
+
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+}
