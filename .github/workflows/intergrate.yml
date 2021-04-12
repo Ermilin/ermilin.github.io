@@ -3,6 +3,10 @@ on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: /
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -27,5 +31,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: build
+          FOLDER: src/out
           CLEAN: true
