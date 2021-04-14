@@ -14,8 +14,10 @@ body {
   overflow-x: hidden;
 }
 body {
-  background-color: #f5f1e9;
+  // background-color: #f5f1e9;
+  background-color: #eae3db;
   margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 figure {
@@ -44,4 +46,12 @@ pre[class*='language-'] {
   margin: 0 -$spacing !important;
   margin-top: $spacing !important;
   margin-bottom: $spacing !important;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

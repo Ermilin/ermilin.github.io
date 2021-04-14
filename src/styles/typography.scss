@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+}
+
 // a {
 //   text-decoration: none;
 //   display: inline-block;
@@ -38,7 +43,24 @@
 // }
 
 a {
+  text-decoration: none;
+  color: black;
   &:active {
     background-color: rgba(0, 0, 0, 0);
   }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.83em;
+  // font-family: Merriweather;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem;
+}
+h2 {
+  text-align: center;
 }

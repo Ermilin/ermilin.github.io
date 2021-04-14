@@ -9,6 +9,7 @@ const DefaultLayout = (props) => (
       <title>{props.title}</title>
       <meta name='description' content={props.description} />
     </Head>
+    <Header />
     {props.children}
     <Footer />
   </div>

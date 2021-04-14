@@ -34,7 +34,7 @@ image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo-man.svg'
 let els = useRef(items.map(() => createRef()));
 ```
 
-3.  Measure container and props width
+3.  Measure the width of the caontainer and the props
 4.  Keep cloning elements if the container width is greater than the total width of the elements
 5.  Find the widest element to offset the container with
     <!-- // if (maxWidth < width) {
