@@ -1,0 +1,20 @@
+@import 'variables';
+
+.card {
+  padding: $spacing;
+  display: grid;
+  border-right: $border;
+  margin: 0;
+
+  figure {
+    img {
+      background-color: whitesmoke;
+    }
+  }
+
+  article {
+    h4 {
+      margin: 0;
+    }
+  }
+}

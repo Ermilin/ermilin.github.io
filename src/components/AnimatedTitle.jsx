@@ -8,8 +8,7 @@ const AnimatedTitle = ({ content }) => {
     els.current.map((el, i) => {
       console.log(el);
       gsap.from(el.current, {
-        rotation: 30,
-        y: 50,
+        y: '100%',
         ease: 'power1.inOut',
         delay: i / 20,
       });
