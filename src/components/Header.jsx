@@ -7,12 +7,13 @@ const skills = [
   'JavaScript',
   'React',
   'Node.js',
+  'Next.js',
   'Authentication',
   'REST API',
   'GraphQL',
   'SQL Server',
   'PowerShell',
-  'Auth',
+  'OAuth',
 ];
 const Header = () => (
   <nav className={styles.nav}>

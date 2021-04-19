@@ -19,7 +19,7 @@ const AnimatedTitle = ({ content }) => {
     <div
       style={{
         display: 'flex',
-        textTransform: 'uppercase',
+        // textTransform: 'uppercase',
         overflow: 'hidden',
       }}
     >

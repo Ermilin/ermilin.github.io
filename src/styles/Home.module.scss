@@ -3,12 +3,9 @@
 .container {
   display: grid;
   grid-template-rows: auto;
-  // gap: $spacing;
-  // margin-top: $spacing;
-  // justify-items: center;
+  place-items: center;
+
   > * {
-    // padding: 0 $spacing;
-    // width: clamp(200px, 100%, 1000px);
-    // border: solid 1px black;
+    width: clamp(10ch, 100%, 150ch);
   }
 }

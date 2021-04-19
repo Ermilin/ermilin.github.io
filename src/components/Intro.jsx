@@ -7,12 +7,12 @@ const Intro = () => (
       <div style={{ display: 'grid' }}>
         <div className={styles.row}>
           <h1>
-            <AnimatedTitle content={'FULL'} />
+            <AnimatedTitle content={'Full'} />
           </h1>
         </div>
         <div className={styles.row}>
           <h1>
-            <AnimatedTitle content={'STACK'} />
+            <AnimatedTitle content={'Stack'} />
           </h1>
         </div>
       </div>
@@ -22,7 +22,7 @@ const Intro = () => (
       </p>
       <div className={styles.row}>
         <h1>
-          <AnimatedTitle content={'DEVELOPER'} />
+          <AnimatedTitle content={'Developer'} />
         </h1>
       </div>
     </div>

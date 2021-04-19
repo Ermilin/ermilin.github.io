@@ -1,4 +1,5 @@
 import styles from '@styles/Card.module.scss';
+import LaunchIcon from '@components/LaunchIcon';
 
 const Card = ({ title, description, image }) => {
   return (
@@ -8,6 +9,7 @@ const Card = ({ title, description, image }) => {
           <h4>{title}</h4>
         </a>
         <p>{description}</p>
+        <LaunchIcon />
       </article>
       <figure>
         <img src={image} />
