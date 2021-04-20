@@ -1,6 +1,7 @@
 import styles from '@styles/Nav.module.scss';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import HamburgerIcon from '@components/HamburgerIcon';
 
 const Marquee = dynamic(() => import('@components/Marquee'), { ssr: false });
 const skills = [
@@ -18,7 +19,9 @@ const skills = [
 const Header = () => (
   <nav className={styles.nav}>
     <figure className={styles.square}>
-      <div className={styles.content}></div>
+      <div className={styles.content}>
+        <HamburgerIcon />
+      </div>
     </figure>
     <div className={styles.marqueeContainer}>
       <Marquee data={skills} padding={20} />
