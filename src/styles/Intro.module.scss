@@ -26,6 +26,10 @@
   grid-column: span 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  .duo {
+    border-right: $border;
+    display: grid;
+  }
   .row {
     grid-column: span 2;
     border-bottom: $border;
@@ -40,7 +44,7 @@
     grid-column: 2;
     margin: 0;
     border-bottom: $border;
-    border-left: $border;
+    // border-left: $border;
     padding: $spacing;
     font-size: clamp(0.8rem, 4vw, 3.5rem);
   }
