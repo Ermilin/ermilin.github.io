@@ -4,6 +4,9 @@ import LaunchIcon from '@components/LaunchIcon';
 const Card = ({ title, description, image }) => {
   return (
     <div className={styles.card}>
+      <figure>
+        <img src={image} />
+      </figure>
       <article>
         <a>
           <h4>{title}</h4>
@@ -11,9 +14,6 @@ const Card = ({ title, description, image }) => {
         <p>{description}</p>
         <LaunchIcon />
       </article>
-      <figure>
-        <img src={image} />
-      </figure>
     </div>
   );
 };
