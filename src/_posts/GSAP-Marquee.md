@@ -78,9 +78,9 @@ els.forEach((item) => {
 
 ### Animation
 
-1. Each item animates from its initial position to the total width of every element combined
-1. When the element has reached the end, it has to place itself at the end of the row, this is done with a modulus of the total width using gsap.utils.wrap()
-1. **delta** is either **1** or **-1** depending on the direction of the animation
+Each item animates from its initial position to the total width of every element combined.
+When the element has reached the end, it has to place itself at the end of the row, this is done with a modulus of the total width using gsap.utils.wrap().
+**Delta** is either **1** or **-1** depending on the direction of the animation
 
 ```javascript
 const wrap = gsap.utils.wrap(0, accWidth);

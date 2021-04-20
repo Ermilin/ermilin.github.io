@@ -5,6 +5,11 @@
     text-align: center;
     margin: 0;
     padding: $spacing;
+
+    @include lg {
+      padding-left: $responsive-padding-lg;
+      padding-right: $responsive-padding-lg;
+    }
   }
   .cards {
     list-style: none;
@@ -15,6 +20,15 @@
     padding: 0;
     border-top: $border;
     border-bottom: $border;
+
+    @include lg {
+      padding-left: $responsive-padding-lg;
+      padding-right: $responsive-padding-lg;
+    }
+    @include xxl {
+      padding-left: $responsive-padding-xxl;
+      padding-right: $responsive-padding-xxl;
+    }
 
     li {
       margin: 0;

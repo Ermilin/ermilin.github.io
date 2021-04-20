@@ -4,7 +4,7 @@ import AnimatedTitle from '@components/AnimatedTitle';
 const Intro = () => (
   <section className={styles.intro}>
     <div className={styles.rows}>
-      <div style={{ display: 'grid' }}>
+      <div className={styles.duo}>
         <div className={styles.row}>
           <h1>
             <AnimatedTitle content={'Full'} />

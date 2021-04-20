@@ -1,7 +1,57 @@
 $spacing: 1.5rem;
 $spacing-sm: 0.5rem;
-$border: solid 1px #000;
+$border: solid 1px hsl(32deg 26% 63%);
 // $border: solid 1px #bbb;
 $border-radius: 1rem;
 $border-radius-sm: 0.75rem;
 $shadow: 5px 5px 20px 0 rgba(5, 15, 31, 0.16), -5px -5px 20px 0 #ffffff;
+$responsive-padding-lg: clamp(0px, 5vw, 20rem);
+$responsive-padding-xxl: clamp(10rem, 15vw, 20rem);
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+$screen-xxl-min: 1700px;
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}

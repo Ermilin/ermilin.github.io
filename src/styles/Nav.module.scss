@@ -5,11 +5,9 @@ $height: 100px;
 .nav {
   width: 100% !important;
   display: grid;
-  // height: $height;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: $height auto;
   place-items: center start;
-  // border-bottom: $border;
   .links {
     grid-row: 2;
     grid-column: 2 / 3;
@@ -20,25 +18,16 @@ $height: 100px;
     border-top: $border;
     height: 100%;
     width: 100%;
-    // display: flex;
-    // flex-wrap: wrap;
     display: grid;
-    // grid-template-columns: repeat(
-    //   auto-fit,
-    //   minmax(calc(50% - 120px), calc(50% - 30px))
-    // );
     grid-template-columns: calc(50% - 50px) 1fr;
 
     li {
-      // flex: 1 1 150px;
-
-      border-left: $border;
       margin: 0;
       display: grid;
       place-content: center;
 
       &:nth-of-type(1) {
-        border: none;
+        border-right: $border;
       }
       a {
         padding: 0;

@@ -3,9 +3,6 @@
 .intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  // background-image: url('/lost_desert.webp');
-  // background-size: auto;
-  // background-repeat: no-repeat;
 
   aside {
     div {
@@ -33,10 +30,15 @@
   .row {
     grid-column: span 2;
     border-bottom: $border;
-    // text-transform: uppercase;
-
     h1 {
       font-weight: 700;
+      margin-left: $spacing;
+    }
+    @include lg {
+      padding-left: $responsive-padding-lg;
+    }
+    @include xxl {
+      padding-left: $responsive-padding-xxl;
     }
   }
   .about {
@@ -44,8 +46,14 @@
     grid-column: 2;
     margin: 0;
     border-bottom: $border;
-    // border-left: $border;
     padding: $spacing;
     font-size: clamp(0.8rem, 4vw, 3.5rem);
+
+    @include lg {
+      padding-right: $responsive-padding-lg;
+    }
+    @include xxl {
+      padding-right: $responsive-padding-xxl;
+    }
   }
 }

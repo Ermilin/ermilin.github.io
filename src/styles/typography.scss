@@ -61,16 +61,13 @@ a {
 h1,
 h2,
 h3 {
-  margin: 0.83em;
+  margin: 0.83em 0;
   // font-family: Merriweather;
 }
 
 h1 {
   font-family: 'Maison Neue Ext Demi';
   font-size: clamp(1rem, 10vw, 10rem);
-  margin: $spacing;
+  margin: $spacing 0;
   line-height: 1;
-}
-h2 {
-  text-align: center;
 }
