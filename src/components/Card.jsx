@@ -12,7 +12,7 @@ const Card = ({ title, description, image }) => {
           <h4>{title}</h4>
         </a>
         <p>{description}</p>
-        <LaunchIcon />
+        {/* <LaunchIcon /> */}
       </article>
     </div>
   );

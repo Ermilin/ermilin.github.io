@@ -2,14 +2,13 @@ import styles from '@styles/Marquee.module.scss';
 import React, { useRef, useEffect, useState, createRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Draggable } from 'gsap/Draggable';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Marquee = ({ data, duration, padding, reverse }) => {
-  gsap.registerPlugin(ScrollTrigger, Draggable);
   const [items, setItems] = useState(data);
   const [maxItemWidth, setMaxItemWidth] = useState(0);
   const [maxItemHeight, setMaxItemHeight] = useState(0);
-  const [delta, setDelta] = useState(-1);
 
   let els = useRef(items.map(() => createRef()));
   let container = useRef();
@@ -55,85 +54,61 @@ const Marquee = ({ data, duration, padding, reverse }) => {
     });
   };
 
+  const additionalX = { val: 0 };
+  let additionalXAnim;
+  let offset = 0;
+
+  var windowWrap = gsap.utils.wrap(0, accWidth);
+  const animate = (delta) => {
+    const tl = gsap.timeline();
+    tl.to(els, {
+      x: `+=${accWidth * delta}`,
+      modifiers: {
+        x: gsap.utils.unitize(gsap.utils.wrap(0, accWidth)), //original
+        // x: (x) => windowWrap(parseFloat(x)) + 'px',
+        // x: function (x, target) {
+        //   return `${parseInt(x) % accWidth}px`;
+        // },
+        // x: function (x, target) {
+        //   x = gsap.utils.wrap(0, accWidth);
+        // },
+      },
+      // duration: accWidth / 50,
+      // paused: true,
+      duration: 5,
+      ease: 'none',
+      repeat: -1,
+    });
+    // animation.progress(9999);
+  };
+
+  const imagesScrollerTrigger = ScrollTrigger.create({
+    trigger: container.current,
+    start: 'top 50%',
+    end: 'bottom 0%',
+    markers: true,
+    onUpdate: function (self) {
+      const velocity = self.getVelocity();
+      // console.log(velocity);
+
+      if (velocity > 0) {
+        if (additionalXAnim) additionalXAnim.kill();
+
+        additionalX.val = velocity / 1000;
+        additionalXAnim = gsap.to(additionalX, { val: 0 });
+      }
+    },
+  });
+
   //Set item pos
   useEffect(() => {
     setItemPos();
   }, [maxItemWidth]);
 
-  let animation;
-  let additionalX = { val: 0 };
-  let additionalXAnim;
-  let offset = 0;
-  let boxWidth;
-  let wrapWidth;
-  let wrapVal;
-  let draggable;
-  const proxy = document.createElement('div');
-
+  // Start animating
   useEffect(() => {
-    let sections = gsap.utils.toArray(els);
-    wrapVal = gsap.utils.wrap(0, accWidth);
-    animation = gsap.to(sections, {
-      x: `+=${accWidth * delta}`,
-      modifiers: {
-        // x: gsap.utils.unitize(gsap.utils.wrap(0, accWidth)), //original
-        x: (x) => {
-          offset += additionalX.val;
-          return wrapVal(parseFloat(x) + offset) + 'px';
-        },
-      },
-      // paused: true,
-      repeat: -1,
-      duration: 50,
-      ease: 'none',
-    });
-
-    sections.forEach((step, i) => {
-      //forward
-      ScrollTrigger.create({
-        trigger: 'body',
-        start: 'top 10%',
-        end: 'bottom 0%',
-        onUpdate: function (self) {
-          const velocity = self.getVelocity();
-          if (self.direction == 1) {
-            if (additionalXAnim) additionalXAnim.kill();
-            additionalX.val = -velocity / 2000;
-            additionalXAnim = gsap.to(additionalX, { val: 0, duration: 1 });
-          }
-        },
-      });
-      //backwards
-      ScrollTrigger.create({
-        trigger: 'body',
-        start: 'top 10%',
-        end: 'bottom 0%',
-        onUpdate: function (self) {
-          const velocity = self.getVelocity();
-          if (self.direction == -1) {
-            if (additionalXAnim) additionalXAnim.kill();
-            additionalX.val = -velocity / 2000;
-            additionalXAnim = gsap.to(additionalX, { val: 0, duration: 1 });
-          }
-        },
-      });
-    });
-  }, [setItemPos, delta]);
-
-  // useEffect(() => {
-  //   gsap.set(proxy, { x: 0 });
-  //   Draggable.create(proxy, {
-  //     type: 'x',
-  //     trigger: container.current,
-  //     throwProps: true,
-  //     onDrag: updateProgress,
-  //     onThrowUpdate: updateProgress,
-  //   })[0];
-  // }, []);
-
-  // function updateProgress() {
-  //   animation.progress(animation.progress() + 0.1);
-  // }
+    reverse ? animate(1) : animate(-1);
+  }, [setItemPos]);
 
   return (
     <>

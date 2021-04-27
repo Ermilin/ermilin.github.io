@@ -13,7 +13,7 @@ body {
 }
 body {
   // background-color: #f5f1e9;
-  background-color: #eae3db;
+  background-color: $primary;
   margin: 0;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
@@ -44,6 +44,10 @@ pre[class*='language-'] {
   margin: 0 -$spacing !important;
   margin-top: $spacing !important;
   margin-bottom: $spacing !important;
+}
+
+.active {
+  text-decoration: underline;
 }
 
 input,

@@ -1,7 +1,8 @@
 import styles from '@styles/Nav.module.scss';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
+// import Link from 'next/link';
 import HamburgerIcon from '@components/HamburgerIcon';
+import ActiveLink from '@components/Link';
 
 const Marquee = dynamic(() => import('@components/Marquee'), { ssr: false });
 const skills = [
@@ -28,12 +29,14 @@ const Header = () => (
     </div>
     <ul className={styles.links}>
       <li>
-        <Link href='/'>
+        <ActiveLink activeClassName='active' href='/'>
           <a>Home</a>
-        </Link>
+        </ActiveLink>
       </li>
       <li>
-        <a href='#'>Articles</a>
+        <ActiveLink activeClassName='active' href='#'>
+          <a>Articles</a>
+        </ActiveLink>
       </li>
     </ul>
     {/* <figure className={styles.square}>

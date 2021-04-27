@@ -24,6 +24,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   .duo {
+    padding-top: 500px; //temp
     border-right: $border;
     display: grid;
   }

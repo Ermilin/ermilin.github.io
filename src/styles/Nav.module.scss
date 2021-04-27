@@ -3,6 +3,10 @@
 $height: 100px;
 
 .nav {
+  position: fixed;
+  top: 0;
+  background-color: $primary;
+  z-index: 99;
   width: 100% !important;
   display: grid;
   grid-template-rows: 1fr 1fr;

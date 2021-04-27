@@ -6,7 +6,6 @@ const AnimatedTitle = ({ content }) => {
 
   useEffect(() => {
     els.current.map((el, i) => {
-      console.log(el);
       gsap.from(el.current, {
         y: '100%',
         ease: 'power1.inOut',
@@ -19,7 +18,6 @@ const AnimatedTitle = ({ content }) => {
     <div
       style={{
         display: 'flex',
-        // textTransform: 'uppercase',
         overflow: 'hidden',
       }}
     >
