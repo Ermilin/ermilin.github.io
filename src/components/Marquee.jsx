@@ -73,20 +73,21 @@ const Marquee = ({ data, duration, padding, reverse }) => {
   useEffect(() => {
     let sections = gsap.utils.toArray(els);
     wrapVal = gsap.utils.wrap(0, accWidth);
-    animation = gsap.to(sections, {
-      x: `+=${accWidth * delta}`,
-      modifiers: {
-        // x: gsap.utils.unitize(gsap.utils.wrap(0, accWidth)), //original
-        x: (x) => {
-          offset += additionalX.val;
-          return wrapVal(parseFloat(x) + offset) + 'px';
+    animation = gsap
+      .to(sections, {
+        x: `+=${accWidth * delta}`,
+        modifiers: {
+          // x: gsap.utils.unitize(gsap.utils.wrap(0, accWidth)), //original
+          x: (x) => {
+            offset += additionalX.val;
+            return wrapVal(parseFloat(x) + offset) + 'px';
+          },
         },
-      },
-      // paused: true,
-      repeat: -1,
-      duration: 50,
-      ease: 'none',
-    });
+        repeat: -1,
+        duration: 50,
+        ease: 'none',
+      })
+      .progress(9999);
 
     sections.forEach((step, i) => {
       //forward
@@ -95,8 +96,11 @@ const Marquee = ({ data, duration, padding, reverse }) => {
         start: 'top 10%',
         end: 'bottom 0%',
         onUpdate: function (self) {
-          const velocity = self.getVelocity();
           if (self.direction == 1) {
+            if (animation.reversed() == true) {
+              animation.reversed(false);
+            }
+            const velocity = self.getVelocity();
             if (additionalXAnim) additionalXAnim.kill();
             additionalX.val = -velocity / 2000;
             additionalXAnim = gsap.to(additionalX, { val: 0, duration: 1 });
@@ -109,8 +113,11 @@ const Marquee = ({ data, duration, padding, reverse }) => {
         start: 'top 10%',
         end: 'bottom 0%',
         onUpdate: function (self) {
-          const velocity = self.getVelocity();
           if (self.direction == -1) {
+            if (animation.reversed() == false) {
+              animation.reversed(true);
+            }
+            const velocity = self.getVelocity();
             if (additionalXAnim) additionalXAnim.kill();
             additionalX.val = -velocity / 2000;
             additionalXAnim = gsap.to(additionalX, { val: 0, duration: 1 });
@@ -120,20 +127,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
     });
   }, [setItemPos, delta]);
 
-  // useEffect(() => {
-  //   gsap.set(proxy, { x: 0 });
-  //   Draggable.create(proxy, {
-  //     type: 'x',
-  //     trigger: container.current,
-  //     throwProps: true,
-  //     onDrag: updateProgress,
-  //     onThrowUpdate: updateProgress,
-  //   })[0];
-  // }, []);
-
-  // function updateProgress() {
-  //   animation.progress(animation.progress() + 0.1);
-  // }
+  setTimeout(() => {}, 1000);
 
   return (
     <>

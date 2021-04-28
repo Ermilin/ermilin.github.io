@@ -34,6 +34,7 @@
     h1 {
       font-weight: 700;
       margin-left: $spacing;
+      text-transform: uppercase;
     }
     @include lg {
       padding-left: $responsive-padding-lg;
