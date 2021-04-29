@@ -84,7 +84,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
           },
         },
         repeat: -1,
-        duration: 50,
+        duration: 100,
         ease: 'none',
       })
       .progress(9999);
@@ -95,6 +95,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
         trigger: 'body',
         start: 'top 10%',
         end: 'bottom 0%',
+        scrub: 2,
         onUpdate: function (self) {
           if (self.direction == 1) {
             if (animation.reversed() == true) {
@@ -102,7 +103,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
             }
             const velocity = self.getVelocity();
             if (additionalXAnim) additionalXAnim.kill();
-            additionalX.val = -velocity / 2000;
+            additionalX.val = -velocity / 4000;
             additionalXAnim = gsap.to(additionalX, { val: 0, duration: 1 });
           }
         },
@@ -112,6 +113,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
         trigger: 'body',
         start: 'top 10%',
         end: 'bottom 0%',
+        scrub: 2,
         onUpdate: function (self) {
           if (self.direction == -1) {
             if (animation.reversed() == false) {
@@ -119,7 +121,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
             }
             const velocity = self.getVelocity();
             if (additionalXAnim) additionalXAnim.kill();
-            additionalX.val = -velocity / 2000;
+            additionalX.val = -velocity / 4000;
             additionalXAnim = gsap.to(additionalX, { val: 0, duration: 1 });
           }
         },

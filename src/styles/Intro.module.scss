@@ -24,13 +24,31 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   .duo {
-    padding-top: 500px; //temp
+    padding-top: calc(50vh - #{$nav-height}); //temp
     border-right: $border;
     display: grid;
+
+    .row {
+      &:nth-of-type(1) {
+        border-bottom: $border;
+      }
+      &:nth-last-of-type(1) {
+        border: none;
+      }
+    }
+    // @include lg {
+    //   padding-top: 30vh;
+    // }
   }
   .row {
     grid-column: span 2;
-    border-bottom: $border;
+    border-top: $border;
+    &:nth-of-type(1) {
+      border-top: $border;
+    }
+    &:nth-last-of-type(1) {
+      border-bottom: $border;
+    }
     h1 {
       font-weight: 700;
       margin-left: $spacing;
@@ -44,12 +62,15 @@
     }
   }
   .about {
+    display: grid;
+    place-content: end;
     grid-row: 1 / 2;
     grid-column: 2;
     margin: 0;
-    border-bottom: $border;
+    // border-bottom: $border;
     padding: $spacing;
-    font-size: clamp(0.8rem, 4vw, 3.5rem);
+    font-size: clamp(0.8rem, 2vw, 3.5rem);
+    line-height: 1.2;
 
     @include lg {
       padding-right: $responsive-padding-lg;

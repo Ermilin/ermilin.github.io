@@ -4,7 +4,7 @@
   display: grid;
   grid-template-rows: auto;
   place-items: center;
-  margin-top: 100px;
+  margin-top: $nav-height;
 
   > * {
     // width: clamp(10ch, 100%, 150ch);

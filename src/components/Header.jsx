@@ -33,11 +33,11 @@ const Header = () => (
           <a>Home</a>
         </ActiveLink>
       </li>
-      <li>
+      {/* <li>
         <ActiveLink activeClassName='active' href='#'>
           <a>Articles</a>
         </ActiveLink>
-      </li>
+      </li> */}
     </ul>
     {/* <figure className={styles.square}>
       <div className={styles.content}>-</div>
