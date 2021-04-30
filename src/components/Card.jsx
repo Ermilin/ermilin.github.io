@@ -1,6 +1,6 @@
 import styles from '@styles/Card.module.scss';
 import LaunchIcon from '@components/LaunchIcon';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const Card = ({ title, description, image }) => {
   return (
