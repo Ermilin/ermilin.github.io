@@ -7,13 +7,13 @@ const Card = ({ title, description, image }) => {
     <li className={styles.card}>
       <figure>
         {/* <img src={image} /> */}
-        <Image
+        {/* <Image
           src={image}
           alt='Picture of the author'
           layout='intrinsic'
           width={300}
           height={400}
-        />
+        /> */}
       </figure>
       <article>
         <a>
