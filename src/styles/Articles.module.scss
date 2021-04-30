@@ -1,6 +1,7 @@
 @import 'variables';
 
 .articles {
+  width: 100%;
   .title {
     text-align: center;
     margin: 0;
@@ -21,6 +22,10 @@
     border-top: $border;
     border-bottom: $border;
 
+    @include sm {
+      padding-left: $spacing;
+      padding-right: $spacing;
+    }
     @include lg {
       padding-left: $responsive-padding-lg;
       padding-right: $responsive-padding-lg;
@@ -30,8 +35,18 @@
       padding-right: $responsive-padding-xxl;
     }
 
-    li {
+    .card {
       margin: 0;
+
+      &:nth-of-type(1) {
+        border-right: $border;
+      }
+      @include sm {
+        border-right: $border;
+        &:nth-of-type(1) {
+          border-left: $border;
+        }
+      }
     }
   }
 }

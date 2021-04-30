@@ -1,7 +1,5 @@
 @import 'variables';
 
-$height: 100px;
-
 .nav {
   position: fixed;
   top: 0;
@@ -10,7 +8,7 @@ $height: 100px;
   width: 100% !important;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: $height auto;
+  grid-template-columns: $nav-height auto;
   place-items: center start;
   .links {
     grid-row: 2;
@@ -23,7 +21,7 @@ $height: 100px;
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: calc(50% - 50px) 1fr;
+    grid-template-columns: calc(50% - calc(#{$nav-height} / 2)) 1fr;
 
     li {
       margin: 0;

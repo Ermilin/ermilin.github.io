@@ -21,7 +21,8 @@ const Header = () => (
   <nav className={styles.nav}>
     <figure className={styles.square}>
       <div className={styles.content}>
-        <HamburgerIcon />
+        {/* <HamburgerIcon /> */}
+        <h2>S</h2>
       </div>
     </figure>
     <div className={styles.marqueeContainer}>

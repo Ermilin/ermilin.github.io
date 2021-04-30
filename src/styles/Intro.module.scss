@@ -43,17 +43,19 @@
   .row {
     grid-column: span 2;
     border-top: $border;
+    padding-left: $spacing;
     &:nth-of-type(1) {
       border-top: $border;
     }
-    &:nth-last-of-type(1) {
-      border-bottom: $border;
-    }
+
     h1 {
       font-weight: 700;
-      margin-left: $spacing;
       text-transform: uppercase;
     }
+
+    // @include sm {
+    //   padding-left: $nav-height;
+    // }
     @include lg {
       padding-left: $responsive-padding-lg;
     }

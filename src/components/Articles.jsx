@@ -7,17 +7,15 @@ import Card from '@components/Card';
 const Articles = ({ posts }) => {
   return (
     <section className={styles.articles}>
-      <h3 className={styles.title}>Articles</h3>
+      {/* <h3 className={styles.title}>Articles</h3> */}
       <ul className={styles.cards}>
         {posts.map((post, idx) => (
           <Link href={'/posts/' + post.slug} key={idx}>
-            <li>
-              <Card
-                title={post.title}
-                description={post.description}
-                image={post.image}
-              />
-            </li>
+            <Card
+              title={post.title}
+              description={post.description}
+              image={post.image}
+            />
           </Link>
         ))}
       </ul>

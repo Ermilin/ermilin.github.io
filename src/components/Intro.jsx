@@ -30,7 +30,7 @@ const Intro = () => {
         start: '0px top',
         end: 'bottom 100px', //$nav-height = 100px
         scrub: 0.5,
-        markers: true,
+        // markers: true,
       },
       y: '-10%',
     });
