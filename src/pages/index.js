@@ -21,7 +21,7 @@ const Blog = (props) => (
   <DefaultLayout title={props.title} description={props.description}>
     <Intro />
     {/* <Marquee data={skills} padding={20} /> */}
-    <Articles posts={props.posts} />
+    {/* <Articles posts={props.posts} /> */}
   </DefaultLayout>
 );
 

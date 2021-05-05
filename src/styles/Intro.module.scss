@@ -43,7 +43,7 @@
   .row {
     grid-column: span 2;
     border-top: $border;
-    padding-left: $spacing;
+    padding-left: $spacing-sm;
     &:nth-of-type(1) {
       border-top: $border;
     }
@@ -56,12 +56,12 @@
     // @include sm {
     //   padding-left: $nav-height;
     // }
-    @include lg {
-      padding-left: $responsive-padding-lg;
-    }
-    @include xxl {
-      padding-left: $responsive-padding-xxl;
-    }
+    // @include lg {
+    //   padding-left: $responsive-padding-lg;
+    // }
+    // @include xxl {
+    //   padding-left: $responsive-padding-xxl;
+    // }
   }
   .about {
     display: grid;
@@ -71,14 +71,16 @@
     margin: 0;
     // border-bottom: $border;
     padding: $spacing;
-    font-size: clamp(0.8rem, 2vw, 3.5rem);
+    // font-size: clamp(0.8rem, 2vw, 3.5rem);
+    font-size: clamp(12px, 3vw, 1ch);
+
     line-height: 1.2;
 
-    @include lg {
-      padding-right: $responsive-padding-lg;
-    }
-    @include xxl {
-      padding-right: $responsive-padding-xxl;
-    }
+    // @include lg {
+    //   padding-right: $responsive-padding-lg;
+    // }
+    // @include xxl {
+    //   padding-right: $responsive-padding-xxl;
+    // }
   }
 }

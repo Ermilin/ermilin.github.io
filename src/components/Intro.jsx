@@ -52,8 +52,10 @@ const Intro = () => {
           </div>
         </div>
         <p className={styles.about} ref={aboutRef}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ea
-          quisquam in ipsam ullam, quisquam.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra
+          mauris in aliquam sem fringilla ut morbi tincidunt. Sed risus pretium
+          quam vulputate dignissim suspendisse in.
         </p>
         <div className={styles.row}>
           <h1>

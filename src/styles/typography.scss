@@ -9,6 +9,12 @@
   font-weight: 600;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Maison Neue Book';
+  src: url('/fonts/MaisonNeue/MaisonNeueExt-Book.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
 // a {
 //   text-decoration: none;
@@ -64,6 +70,10 @@ h3 {
   margin: 0.83em 0;
   color: #222;
   // font-family: Merriweather;
+}
+
+p {
+  font-family: 'Maison Neue Book', sans-serif;
 }
 
 h1 {

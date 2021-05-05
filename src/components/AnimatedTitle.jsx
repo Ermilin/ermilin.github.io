@@ -6,31 +6,36 @@ const AnimatedTitle = ({ content }) => {
   gsap.registerPlugin(ScrollTrigger);
   let els = useRef([...content].map(() => createRef()));
   els = els.current;
-  // let els = useRef([...content].map(() => createRef()));
+
   useEffect(() => {
     els.map((el, i) => {
-      gsap.to(el.current, {
-        scrollTrigger: {
-          trigger: el.current,
-          start: 'top center',
-          end: 'bottom 100px', //$nav-height = 100px
-          scrub: 0.5,
-          // markers: true,
+      ScrollTrigger.matchMedia({
+        '(max-width: 799px)': function () {
+          gsap.to(el.current, {
+            scrollTrigger: {
+              trigger: el.current,
+              start: 'top 200px',
+              end: 'bottom 100px',
+              toggleActions: 'play none none reverse',
+              // markers: true,
+            },
+            y: '-100%',
+          });
         },
-        y: '-100%',
+        '(min-width: 800px)': function () {
+          gsap.to(el.current, {
+            scrollTrigger: {
+              trigger: el.current,
+              start: 'top center',
+              end: 'bottom 100px',
+              scrub: 0.5,
+              // markers: true,
+            },
+            y: '-100%',
+          });
+        },
       });
     });
-
-    // gsap.utils.toArray(els).forEach((section) => {
-    //   gsap.to(section, {
-    //     y: 100,
-    //     stagger: 0.1,
-    //   });
-    // });
-    // gsap.to(els, {
-    //   y: 100,
-    //   stagger: 0.1,
-    // });
   }, []);
 
   return (

@@ -84,7 +84,7 @@ const Marquee = ({ data, duration, padding, reverse }) => {
           },
         },
         repeat: -1,
-        duration: 100,
+        duration: window.innerWidth / 10,
         ease: 'none',
       })
       .progress(9999);

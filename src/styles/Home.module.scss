@@ -5,6 +5,45 @@
   grid-template-rows: auto;
   place-items: center;
   margin-top: $nav-height;
+  padding-right: $spacing;
+  padding-left: $spacing;
+  @include lg {
+    padding-right: $responsive-padding-lg;
+    padding-left: $responsive-padding-lg;
+  }
+  @include xxl {
+    padding-right: $responsive-padding-xxl;
+    padding-left: $responsive-padding-xxl;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: $spacing;
+    height: 500%;
+    border-right: $border;
+
+    @include lg {
+      left: $responsive-padding-lg;
+    }
+    @include xxl {
+      left: $responsive-padding-xxl;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: $spacing;
+    height: 500%;
+    border-right: $border;
+    @include lg {
+      right: $responsive-padding-lg;
+    }
+    @include xxl {
+      right: $responsive-padding-xxl;
+    }
+  }
 
   > * {
     // width: clamp(10ch, 100%, 150ch);
