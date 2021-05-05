@@ -5,13 +5,14 @@
 
 @font-face {
   font-family: 'Maison Neue Ext Demi';
-  src: url('/fonts/MaisonNeue/MaisonNeueExt-Demi.woff2');
+  // src: url('/fonts/MaisonNeue/Extended/MaisonNeueExt-Demi.woff2');
+  src: url('/fonts/MaisonNeue/Extended/MaisonNeueExt-Demi.woff2');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Maison Neue Book';
-  src: url('/fonts/MaisonNeue/MaisonNeueExt-Book.woff2');
+  src: url('/fonts/MaisonNeue/MaisonNeue-Book.woff2');
   font-weight: 400;
   font-style: normal;
 }
